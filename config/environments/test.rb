@@ -59,4 +59,7 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  config.active_record.encryption.primary_key = "3gGvccg9iegjK9dAp75jbFtyjfJFH5ZB"
+  config.active_record.encryption.deterministic_key = "RZ89blrhPWetgOCz8dX5ybKeYF7CGtlM"
+  config.active_record.encryption.key_derivation_salt = "vxvnaduMk0N5KV0o6y9naGafGEevUL80"
 end
