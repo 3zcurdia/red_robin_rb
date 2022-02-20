@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class MessagingServicesController < ApplicationController
-  http_basic_authenticate_with name: ENV["ADMIN_NAME"], password: ENV["ADMIN_PASSWORD"], unless: -> { Rails.env.test? }
+  http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASSWORD"], unless: lambda {
+                                                                                                       Rails.env.test?
+                                                                                                     }
   before_action :set_messaging_service, only: %i[show edit update destroy]
 
   def index
