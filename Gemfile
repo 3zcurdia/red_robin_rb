@@ -10,10 +10,11 @@ gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 
 # gem "kredis"
+# gem "image_processing", "~> 1.2"
 gem "bcrypt", "~> 3.1.7"
 gem "redis", "~> 4.0"
 gem "sidekiq"
-# gem "image_processing", "~> 1.2"
+gem "slack-notifier"
 
 gem "importmap-rails"
 gem "jbuilder"

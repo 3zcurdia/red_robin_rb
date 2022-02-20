@@ -8,4 +8,8 @@ class MessagingService < ApplicationRecord
   encrypts :webhook_url, :client_id, :client_secret
 
   enum provider: { slack: "slack" }
+
+  def client
+    @client ||= MessagingClient.build(self)
+  end
 end
