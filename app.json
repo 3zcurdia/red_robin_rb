@@ -1,0 +1,14 @@
+{
+  "name": "RedRobin",
+  "description": "Multi messaging app",
+  "addons": [
+    "rediscloud:30",
+    "cloudamqp:lemur"
+  ],
+  "stack" : "heroku-20",
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
