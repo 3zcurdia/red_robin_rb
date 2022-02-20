@@ -1,6 +1,6 @@
 # README
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/3zcurdia/red_robin/tree/main)
 [![Ruby on Rails](https://github.com/3zcurdia/red_robin/actions/workflows/rails.yml/badge.svg)](https://github.com/3zcurdia/red_robin/actions/workflows/rails.yml)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/3zcurdia/red_robin/tree/master)
 
 Simple notification delivery app
 

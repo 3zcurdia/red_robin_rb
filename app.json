@@ -1,6 +1,6 @@
 {
   "name": "RedRobin",
-  "description": "Multi messaging app",
+  "description": "Simple notification delivery app",
   "addons": [
     "rediscloud:30",
     "cloudamqp:lemur"
