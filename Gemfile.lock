@@ -68,12 +68,16 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    amq-protocol (2.3.2)
     ast (2.4.2)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.10.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bunny (2.19.0)
+      amq-protocol (~> 2.3, >= 2.3.1)
+      sorted_set (~> 1, >= 1.0.2)
     capybara (3.36.0)
       addressable
       matrix
@@ -181,6 +185,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    rbtree (0.4.5)
     redis (4.6.0)
     regexp_parser (2.2.1)
     reline (0.3.1)
@@ -212,11 +217,15 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
+    set (1.0.2)
     sidekiq (6.4.1)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
     slack-notifier (2.4.0)
+    sorted_set (1.0.3)
+      rbtree
+      set (~> 1.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -257,6 +266,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  bunny
   capybara
   debug
   factory_bot_rails
