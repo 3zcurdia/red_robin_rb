@@ -10,5 +10,16 @@
     {
       "url": "heroku/ruby"
     }
-  ]
+  ],
+  "env": {
+    "REDIS_PROVIDER": {
+      "value": "REDISCLOUD_URL"
+    },
+    "ADMIN_PASSWORD": {
+      "description": "Basic http auth password"
+    },
+    "ADMIN_USERNAME": {
+      "description": "Basic http auth username"
+    }
+  }
 }
