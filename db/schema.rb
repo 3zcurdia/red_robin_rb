@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_20_115333) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_20_131459) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "messages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "messaging_service_id", null: false
+    t.string "recipient"
+    t.text "content"
+    t.datetime "delivered_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["messaging_service_id"], name: "index_messages_on_messaging_service_id"
+  end
 
   create_table "messaging_services", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "alias_name"
@@ -26,4 +36,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_115333) do
     t.index ["provider"], name: "index_messaging_services_on_provider"
   end
 
+  add_foreign_key "messages", "messaging_services"
 end

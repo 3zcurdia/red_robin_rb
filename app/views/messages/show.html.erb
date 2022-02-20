@@ -1,0 +1,13 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <%= link_to "Messages", messages_path %>
+    </li>
+    <li class="is-active">
+      <%= link_to @message.id, "#" %>
+    </li>
+  </ul>
+</nav>
+<%= render @message %>
+
+<%= button_to "Destroy this message", @message, class: "button is-danger", method: :delete %>

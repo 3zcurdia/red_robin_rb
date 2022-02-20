@@ -1,0 +1,24 @@
+<h1 class="title">Messages</h1>
+
+<table class="table is-hoverable is-striped">
+  <thead>
+    <tr>
+      <th>Messaging service</th>
+      <th>Recipient</th>
+      <th>Content</th>
+      <th>Delivered at</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+    <tr>
+      <td><%= message.messaging_service.alias_name %></td>
+      <td><%= message.recipient %></td>
+      <td><%= truncate message.content %></td>
+      <td><%= l(message.delivered_at, format: :long) if message.delivered_at.present? %></td>
+      <td><%= link_to "Details", message %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+<div id="<%= dom_id message %>">
+  <h1 class="title"><%=  message.id %></h1>
+  <p class="subtitle">
+    <%= message.messaging_service.alias_name %>, <%= message.recipient %>
+  </p>
+
+  <p class="content">
+    <%= message.content %>
+  </p>
+</div>
