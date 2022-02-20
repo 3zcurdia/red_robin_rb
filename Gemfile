@@ -18,7 +18,7 @@ gem "turbo-rails"
 gem "redis", "~> 4.0"
 # gem "kredis"
 
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 gem "bootsnap", require: false
 
@@ -26,6 +26,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails"
 end
 
 group :development do
