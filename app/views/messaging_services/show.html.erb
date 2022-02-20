@@ -1,0 +1,15 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <%= link_to "Messaging Services", messaging_services_path %>
+    </li>
+    <li class="is-active">
+      <%= link_to @messaging_service.alias_name, "#" %>
+    </li>
+    <li>
+      <%= link_to "Edit", edit_messaging_service_path(@messaging_service) %>
+    </li>
+  </ul>
+</nav>
+
+<%= render @messaging_service %>

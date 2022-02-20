@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :messaging_service do
-    alias_name { "Company A Slack" }
+    sequence(:alias_name) { |n| "Company #{n} Slack" }
     provider { "slack" }
-    webhook_url { "http://example.com/slack" }
+    sequence(:webhook_url) { |n| "http://example.com/slack/#{n}" }
 
     trait :with_credentials do
       client_id { SecureRandom.hex }

@@ -1,0 +1,25 @@
+<h1 class="title">Messaging services</h1>
+<p class="subtitle">
+  <%= link_to "Create", new_messaging_service_path %>
+</p>
+
+<table class="table is-hoverable is-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Alias name</th>
+      <th>Provider</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @messaging_services.each do |messaging_service| %>
+    <tr>
+      <td><%= messaging_service.id %></td>
+      <td><%= messaging_service.alias_name %></td>
+      <td><%= messaging_service.provider %></td>
+      <td><%= link_to "Details", messaging_service %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
