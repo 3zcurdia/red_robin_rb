@@ -49,6 +49,6 @@ class MessagingServicesController < ApplicationController
   end
 
   def messaging_service_params
-    params.require(:messaging_service).permit(:alias_name, :provider, :webhook_url, :client_id, :client_secret)
+    params.require(:messaging_service).permit(:alias_name, :provider, :webhook_url)
   end
 end
