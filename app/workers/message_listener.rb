@@ -11,7 +11,9 @@ class MessageListener
 
     case data
     in { uuid: uuid, recipient: recipient, content: content}
-      logger.info "Recived: #{msg}"
+      serv = MessagingService.find(uuid)
+      serv.messages.create(recipient: recipient, content: content)
+      logger.info "Message created to: #{uuid}"
     end
     ack!
   end
