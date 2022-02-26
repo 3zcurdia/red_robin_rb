@@ -12,7 +12,7 @@ class BunnyClient
   attr_reader :conn, :channel, :routing_key
 
   def exchange
-    @exchange ||= channel.direct("red_robin")
+    @exchange ||= channel.direct("amq.direct", type: :direct, durable: true, auto_delete: false)
   end
 
   private

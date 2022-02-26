@@ -16,6 +16,7 @@ gem "bunny"
 gem "redis", "~> 4.0"
 gem "sidekiq"
 gem "slack-notifier"
+gem "sneakers"
 
 gem "importmap-rails"
 gem "jbuilder"
