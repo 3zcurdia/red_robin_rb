@@ -5,7 +5,7 @@ class MessagingClient
 
   def self.build(messaging_service)
     case messaging_service.provider
-    when :slack
+    when "slack"
       SlackClient
     else
       raise UnsupportedClient
