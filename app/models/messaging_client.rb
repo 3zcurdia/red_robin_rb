@@ -5,11 +5,11 @@ class MessagingClient
 
   def self.build(messaging_service)
     case messaging_service.provider
-    when "slack"
-      SlackClient.new(messaging_service.webhook_url)
+    when :slack
+      SlackClient
     else
       raise UnsupportedClient
-    end
+    end.new(messaging_service.settings)
   end
 
   def notify!(_recipient, _content)

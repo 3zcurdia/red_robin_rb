@@ -6,6 +6,6 @@ class Publisher < BunnyClient
   end
 
   def push(msg)
-    exchange.publish(msg, routing_key: routing_key)
+    exchange.publish(msg, routing_key:)
   end
 end

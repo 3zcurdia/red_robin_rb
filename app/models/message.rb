@@ -12,12 +12,16 @@ class Message < ApplicationRecord
 
   def deliver!
     Message.transaction do
-      messaging_service_client.notify!(recipient, content)
+      notify!
       update!(delivered_at: DateTime.current)
     end
   end
 
   private
+
+  def notify!
+    messaging_service_client.notify!(recipient, content)
+  end
 
   def send_message_later
     MessageSenderJob.perform_later(self)

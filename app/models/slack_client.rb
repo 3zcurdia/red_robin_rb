@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class SlackClient < MessagingClient
-  def initialize(webhook_url)
-    @webhook_url = webhook_url
+  def initialize(**args)
+    @webhook_url = args[:webhook_url]
   end
 
   def notify!(channel, message)
