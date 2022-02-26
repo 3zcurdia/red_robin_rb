@@ -9,7 +9,7 @@ class MessagingClient
       SlackClient
     else
       raise UnsupportedClient
-    end.new(messaging_service.settings)
+    end.new(**messaging_service.settings)
   end
 
   def notify!(_recipient, _content)
