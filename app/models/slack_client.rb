@@ -6,7 +6,11 @@ class SlackClient < MessagingClient
   end
 
   def notify!(channel, message)
-    notifier_for(channel).ping(message)
+    if Rails.env.test?
+      Rails.logger.info("[#{channel}]: #{message}")
+    else
+      notifier_for(channel).ping(message)
+    end
   end
 
   private

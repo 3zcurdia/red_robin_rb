@@ -8,9 +8,9 @@ class Message < ApplicationRecord
 
   validates :recipient, :content, presence: true
 
-  after_create_commit :send_message_later
+  after_create_commit :deliver_message!
 
-  def deliver!
+  def deliver_message!
     Message.transaction do
       notify!
       update!(delivered_at: DateTime.current)
@@ -21,10 +21,6 @@ class Message < ApplicationRecord
 
   def notify!
     messaging_service_client.notify!(recipient, content)
-  end
-
-  def send_message_later
-    MessageSenderJob.perform_later(self)
   end
 
   def messaging_service_client

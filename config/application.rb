@@ -12,10 +12,9 @@ module RedRobin
   class Application < Rails::Application
     config.middleware.use Rack::Deflater
     config.load_defaults 7.0
-    config.time_zone = "Central Time (US & Canada)"
-    config.active_job.queue_adapter = :sidekiq
+    # config.time_zone = "Central Time (US & Canada)"
+    config.active_job.queue_adapter = :sneakers
     config.generators do |g|
-      g.test_framework :test_unit, fixture: false
       g.orm :active_record, primary_key_type: :uuid
     end
   end

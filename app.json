@@ -2,7 +2,6 @@
   "name": "RedRobin",
   "description": "Simple notification delivery app",
   "addons": [
-    "rediscloud:30",
     "cloudamqp:lemur"
   ],
   "stack" : "heroku-20",
@@ -12,9 +11,6 @@
     }
   ],
   "env": {
-    "REDIS_PROVIDER": {
-      "value": "REDISCLOUD_URL"
-    },
     "ADMIN_PASSWORD": {
       "description": "Basic http auth password"
     },
