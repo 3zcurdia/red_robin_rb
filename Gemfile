@@ -11,7 +11,7 @@ gem "rails", "~> 7.0.2"
 
 # gem "kredis"
 # gem "image_processing", "~> 1.2"
-gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.17"
 gem "bunny"
 # gem "redis", "~> 4.0"
 gem "slack-notifier"
